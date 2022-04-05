@@ -1,12 +1,13 @@
 <script setup>
 import Searcher from './components/searcher.vue'
+import NavBar from './components/navBar.vue'
 </script>
 
 <template>
   <div class="main-body">
-    <header>
+    <NavBar>
 
-    </header>
+    </NavBar>
 
     <main class="body-inner">
       <Searcher/>

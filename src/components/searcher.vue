@@ -13,8 +13,9 @@
                placeholder="Nombre de la ferretería"
                type="text"
                v-model="searchQuery"
+               @on-keyup="search"
+               @keyup="search"
         >
-        {{searchQuery}}
         <div class="input-group-append">
           <button
               class="btn btn-squared btn-secondary"
@@ -25,7 +26,7 @@
           </button>
         </div>
         <div class="search-results" v-if="resultsActive">
-          <div v-for="(result, index) in searchActive" ref="result.id" class="result" @click="select(result)">
+          <div v-for="(result, index) in searchActive" ref="result.id" class="result" @click="select(result.id, result.name)">
           <span
               v-if="index<4"
               ref="index"
@@ -38,10 +39,6 @@
     </div>
     <div class="btn btn-primary">
       Continuar
-    </div>
-    <div v-for="ferret in data">
-      {{ferret.name}}
-
     </div>
   </div>
 </template>
@@ -67,7 +64,6 @@ export default {
       if (newValue.length ==0) {
         this.resultsActive = false;
       }
-      this.search();
     },
   },
   methods: {
@@ -78,18 +74,19 @@ export default {
         complete: function (results) {
           this.data = results.data;
           this.searchActive = this.data;
-          console.log(this.data);
         }.bind(this)
       });
     },
     clearSelected() {
       this.selected.name = '';
       this.selected.id = '';
+      this.searchActive = this.data;
     },
-    select(result) {
+    select(id, name) {
       this.searchQuery = '';
       this.resultsActive = false;
-      this.selected = result;
+      this.selected.id = id;
+      this.selected.name = name;
     },
     search() {
       //takes query String to search in data Array that contains object with name and id
@@ -97,8 +94,9 @@ export default {
       if(this.searchQuery.length>0){
         this.resultsActive = true;
       }
+      this.searchActive = this.data;
       //takes this.searchQuery and searches in this.data Object to return an array of objects that match the query
-      this.searchActive = this.data.filter(function (item) {
+      this.searchActive = this.searchActive.filter(function (item) {
         return item.name.toLowerCase().includes(this.searchQuery.toLowerCase());
       }.bind(this));
 
