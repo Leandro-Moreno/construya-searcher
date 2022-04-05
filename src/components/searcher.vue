@@ -64,6 +64,7 @@ export default {
       if (newValue.length ==0) {
         this.resultsActive = false;
       }
+      console.log("watch:"+newValue);
     },
   },
   methods: {
@@ -91,6 +92,7 @@ export default {
     search() {
       //takes query String to search in data Array that contains object with name and id
       //returns array of objects that match the query
+      console.log("search:"+this.searchQuery);
       if(this.searchQuery.length>0){
         this.resultsActive = true;
       }
