@@ -14,6 +14,7 @@
                type="text"
                v-model="searchQuery"
         >
+        {{searchQuery}}
         <div class="input-group-append">
           <button
               class="btn btn-squared btn-secondary"
@@ -37,6 +38,10 @@
     </div>
     <div class="btn btn-primary">
       Continuar
+    </div>
+    <div v-for="ferret in data">
+      {{ferret.name}}
+
     </div>
   </div>
 </template>
