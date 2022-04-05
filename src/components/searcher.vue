@@ -12,8 +12,6 @@
         <input class="form-control"
                placeholder="Nombre de la ferretería"
                type="text"
-               @change="search"
-               @keyup="search"
                v-model="searchQuery"
         >
         <div class="input-group-append">
@@ -64,6 +62,7 @@ export default {
       if (newValue.length ==0) {
         this.resultsActive = false;
       }
+      this.search();
     },
   },
   methods: {

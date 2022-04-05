@@ -100,8 +100,9 @@ h1{
   }
 
   #app {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr;
+    justify-content: center;
     padding: 0 2rem;
   }
 
