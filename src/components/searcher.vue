@@ -15,6 +15,8 @@
                v-model="searchQuery"
                @on-keyup="search"
                @keyup="search"
+               v-on:input="search"
+               ref="searchQuery"
         >
         <div class="input-group-append">
           <button
