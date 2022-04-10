@@ -4,13 +4,14 @@ import NavBar from './components/navBar.vue'
 </script>
 
 <template>
-  <div class="main-body">
-    <NavBar>
+  <NavBar>
 
-    </NavBar>
+  </NavBar>
+  <div class="main-body">
 
     <main class="body-inner">
       <Searcher/>
+      <img class="content-img" src="./construya-money.svg" />
     </main>
   </div>
 
@@ -24,7 +25,8 @@ body {
   padding: 0;
   height: 100%;
   position: relative;
-  background-color: rgb(249, 249, 249);;
+  background-color: #c4d600;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
@@ -34,22 +36,42 @@ body {
 }
 
 .main-body {
-  max-width: 550px;
+  max-width: 75vw;
   margin: 10px auto;
   /*!* padding-top: 10%;*/
 }
 .body-inner{
   padding: 20px;
   padding-bottom: 0px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-areas: ". .";
+  justify-content: space-evenly;
+  justify-items: stretch;
+  align-content: center;
+  vertical-align: center;
+  align-items: center;
+}
+.content-img{
+  height: 80%;
 }
 
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /*max-width: 1280px;*/
+  /*margin: 0 auto;*/
+  /*padding: 2rem;*/
 
-  font-weight: normal;
+  /*font-weight: normal;*/
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+  display: block;
+  place-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 header {
@@ -69,7 +91,9 @@ a,
 }
 h1{
   font-weight: bolder;
-  line-height: 2.1rem;
+  line-height: 3.1rem;
+  font-size: 3.5rem;
+  color: white;
 }
 .btn{
   display: inline-block;
@@ -80,12 +104,12 @@ h1{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-radius: 0 0.25rem 0.25rem 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (hover: hover) {
   a:hover {
@@ -94,17 +118,11 @@ h1{
 }
 
 @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-    font-family: 'Roboto', sans-serif;
-  }
-
   #app {
-    display: flex;
-    grid-template-columns: 1fr 1fr;
+    /*display: flex;*/
+    /*grid-template-columns: 1fr 1fr;*/
     justify-content: center;
-    padding: 0 2rem;
+    /*padding: 0 2rem;*/
   }
 
   header {
