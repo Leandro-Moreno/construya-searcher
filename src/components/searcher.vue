@@ -116,16 +116,19 @@ export default {
 <style lang="scss">
 .selected{
   position: absolute;
-  top: 4px;
+  top: 6px;
   display: block;
-  background: #f9f9f9;
+  background: #c4d600;
   z-index: 999;
   padding: 3px 24px;
-  font-size: 15px;
+  font-size: 19px;
   width: 68%;
   left: 10px;
   border-radius: 5px;
   border: 1px solid grey;
+  span{
+    font-weight: 700;
+  }
 }
 .close{
   width: 26px;
@@ -135,7 +138,7 @@ export default {
   top: 0;
   display: grid;
   align-content: center;
-  background-color: #fff;
+  background-color: #c4d600;
   cursor: pointer;
 }
 .search-results{
@@ -210,7 +213,7 @@ export default {
   margin-bottom: 0;
   display: block;
   width: 100%;
-  height: calc(2.25rem + 2px);
+  height: calc(3rem + 2px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -218,17 +221,17 @@ export default {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border-radius: 0.25rem 0 0 0.25rem;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .card {
   //background-color: rgb(249, 249, 249);
-  box-shadow: 0 8px 17px 0 rgb(55 55 55 / 20%), 0 6px 20px 0 rgb(125 125 125 / 19%);
+  /*box-shadow: 0 8px 17px 0 rgb(55 55 55 / 20%), 0 6px 20px 0 rgb(125 125 125 / 19%);*/
   position: relative;
   margin: 10px 0 20px 0;
   border-radius: 8px;
-  background-color: white;
+  /*background-color: white;*/
   padding: 25px;
   &--header {
     padding: 20px;

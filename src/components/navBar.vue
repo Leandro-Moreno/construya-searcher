@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-
+    <img src="https://www.construya.com/images/inicio/logo_horizontal.png" alt="logo" class="logo" />
   </header>
 </template>
 <script>
@@ -14,6 +14,8 @@ export default {
 </script>
 <style lang="scss">
 .header {
+  display: flex;
+  justify-content: center;
   height: 80px;
   left: 0;
   position: relative;
