@@ -131,9 +131,10 @@ export default {
   }
 }
 .close{
-  width: 26px;
+  width: 32px;
   height: 100%;
   position: absolute;
+  text-align: center;
   right: 1px;
   top: 0;
   display: grid;
