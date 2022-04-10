@@ -97,7 +97,7 @@ h1{
 }
 .btn{
   display: inline-block;
-  
+
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;

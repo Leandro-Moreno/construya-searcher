@@ -118,7 +118,7 @@ export default {
   position: absolute;
   top: 6px;
   display: block;
-  background: #c4d600;
+  background: #fbbd0f;
   z-index: 999;
   padding: 3px 24px;
   font-size: 19px;
@@ -138,7 +138,7 @@ export default {
   top: 0;
   display: grid;
   align-content: center;
-  background-color: #c4d600;
+  background-color: #fb980f;
   cursor: pointer;
 }
 .search-results{
