@@ -25,6 +25,12 @@ export default {
   border-bottom: 1px solid transparent;
   transition: 0.3s;
   background-color: #eff7ff;
+  align-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-items: center;
+  flex-direction: column;
 }
+
 
 </style>

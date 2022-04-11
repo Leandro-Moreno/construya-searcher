@@ -118,7 +118,7 @@ h1{
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   #app {
     /*display: flex;*/
     /*grid-template-columns: 1fr 1fr;*/
@@ -139,7 +139,24 @@ h1{
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+  }
+  .selected{
+    font-size:11px;
+  }
+  .main-body{
+    max-width: 100vw;
+  }
+  .body-inner{
+    padding: 20px 20px 0;
+    display: block!important;
+    grid-template-columns: 1fr!important;
+    grid-template-areas: ". .";
+    justify-content: flex-start;
+    justify-items: stretch;
+  }
+  h1{
+    line-height: 1.8rem;
+    font-size: 1.5rem;
   }
 }
 </style>
