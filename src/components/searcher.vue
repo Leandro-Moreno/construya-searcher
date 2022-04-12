@@ -28,9 +28,8 @@
           </button>
         </div>
         <div class="search-results" v-if="resultsActive">
-          <div v-for="(result, index) in searchActive" ref="result.id" class="result" @click="select(result.id, result.name)">
+          <div v-for="(result, index) in searchActive.slice(0, 6)" ref="result.id" class="result" @click="select(result.id, result.name)">
           <span
-              v-if="index<4"
               ref="index"
 
           >{{ result.name }}</span>
@@ -39,7 +38,7 @@
       </div>
 
     </div>
-    <div class="btn btn-primary">
+    <div class="btn btn-primary" @click="sendToPage">
       Continuar
     </div>
   </div>
@@ -105,7 +104,12 @@ export default {
       }.bind(this));
 
 
-    }
+    },
+    sendToPage() {
+      if(this.selected.id.length){
+        window.location.href="https://incursor.entreamigos.co/credit-request?promoterCode="+this.selected.id;
+      }
+    },
   },
   mounted() {
     this.importData();
