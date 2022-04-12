@@ -28,15 +28,15 @@
           </button>
         </div>
         <div class="search-results" v-if="resultsActive">
-          <div v-for="(result, index) in searchActive.slice(0, 6)" ref="result.id" class="result" @click="select(result.id, result.name)">
+          <div v-for="(result, index) in searchActive.slice(0, 6)" ref="result.id" class="result" @click="select(result.id, result.name, result.ciudad)">
           <span
               ref="index"
 
-          >{{ result.name }}</span>
+          >{{ result.name }} - {{result.ciudad}}</span>
           </div>
         </div>
       </div>
-
+      {{selected.ciudad}}
     </div>
     <div class="btn btn-primary" @click="sendToPage">
       Continuar
@@ -56,6 +56,7 @@ export default {
       selected: {
         name: '',
         id: '',
+        ciudad: ''
       },
       resultsActive: false,
     }
@@ -82,13 +83,15 @@ export default {
     clearSelected() {
       this.selected.name = '';
       this.selected.id = '';
+      this.selected.ciudad = '';
       this.searchActive = this.data;
     },
-    select(id, name) {
+    select(id, name, ciudad) {
       this.searchQuery = '';
       this.resultsActive = false;
       this.selected.id = id;
       this.selected.name = name;
+      this.selected.ciudad = ciudad;
     },
     search() {
       //takes query String to search in data Array that contains object with name and id
