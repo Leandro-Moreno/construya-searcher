@@ -15,7 +15,7 @@ export default {
 <style lang="scss">
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   height: 80px;
   left: 0;
   position: relative;
