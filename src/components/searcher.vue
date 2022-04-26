@@ -1,7 +1,10 @@
 <template>
+  <div>
+  <img src="https://www.construya.com/images/inicio/logo_horizontal.png" alt="logo" class="logo" />
   <div class="card">
     <div class="card--header">
-      <h1>Ingresa el nombre de la ferretería en la que vas a realizar tu compra.</h1>
+      <h1>Para realizar tu solicitud de crédito</h1>
+      <h2>Ingresa el nombre de la ferretería en la que vas a realizar tu compra.</h2>
     </div>
     <div class="card--content">
       <div class="input-group">
@@ -23,6 +26,7 @@
               class="btn btn-squared btn-secondary"
                   type="button"
           @click="search"
+              v-if="isMobile"
           >
             <i class="bx bx-search"></i>
           </button>
@@ -39,8 +43,9 @@
       {{selected.ciudad}}
     </div>
     <div class="btn btn-primary" @click="sendToPage">
-      Continuar
+      Continuar solicitud
     </div>
+  </div>
   </div>
 </template>
 <script>
@@ -59,8 +64,10 @@ export default {
         ciudad: ''
       },
       resultsActive: false,
+      isMobile: false,
     }
   },
+  emits: ['idSelected'],
   watch: {
     searchQuery: function(newValue) {
       if (newValue.length ==0) {
@@ -93,6 +100,11 @@ export default {
       this.selected.name = name;
       this.selected.ciudad = ciudad;
     },
+    isMobile() {
+      if(window.innerWidth < 768){
+        this.isMobile = true;
+      }
+    },
     search() {
       //takes query String to search in data Array that contains object with name and id
       //returns array of objects that match the query
@@ -110,12 +122,13 @@ export default {
     },
     sendToPage() {
       if(this.selected.id.length){
-        window.location.href="https://incursor.entreamigos.co/credit-request?promoterCode="+this.selected.id;
+        this.$emit('idSelected', this.selected.id);
       }
     },
   },
   mounted() {
     this.importData();
+    this.isMobile();
   }
 }
 
@@ -123,14 +136,15 @@ export default {
 <style lang="scss">
 .selected{
   position: absolute;
-  top: 6px;
+  top: 5px;
   display: block;
   background: #fbbd0f;
   z-index: 999;
-  padding: 3px 24px;
-  font-size: 19px;
+  padding: 2px 24px;
+  font-size: 16px;
+  line-height: 16px;
   width: 68%;
-  left: 10px;
+  left: 6px;
   border-radius: 5px;
   border: 1px solid grey;
   span{
@@ -239,11 +253,12 @@ export default {
   position: relative;
   margin: 10px 0 20px 0;
   border-radius: 8px;
+  background: #c4d600;
   /*background-color: white;*/
   padding: 25px;
   &--header {
-    padding: 20px;
-
+     padding: 20px;
+     display: grid;
   }
 
   &--content {

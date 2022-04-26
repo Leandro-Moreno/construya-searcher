@@ -1,22 +1,48 @@
-<script setup>
-import Searcher from './components/searcher.vue'
-import NavBar from './components/navBar.vue'
-</script>
-
 <template>
-  <NavBar>
+<!--  <NavBar v-if="!inRedirection">-->
 
-  </NavBar>
+<!--  </NavBar>-->
   <div class="main-body">
 
-    <main class="body-inner">
-      <Searcher/>
-      <img class="content-img" src="./construya-money.svg" />
+    <main class="body-inner" v-if="!inRedirection">
+      <Searcher v-on:id-selected="selectedId"/>
+      <img class="content-img" src="./ilustracion.svg" />
+    </main>
+    <main class="body-inner redirect" v-else>
+      <Redirect />
     </main>
   </div>
 
 </template>
-
+<script>
+import Searcher from './components/searcher.vue'
+import NavBar from './components/navBar.vue'
+import Redirect from './components/redirect.vue'
+export default {
+  components: {
+    Searcher,
+    NavBar,
+    Redirect
+  },
+  data() {
+    return {
+      selected: null,
+      inRedirection: false
+    }
+  },
+  methods: {
+    selectedId(query) {
+      console.log(query)
+      this.selected = query
+      this.inRedirection = true
+      //redirect in three seconds
+      setTimeout(() => {
+        window.location.href="https://incursor.entreamigos.co/credit-request?promoterCode="+this.selected;
+      }, 3000)
+    }
+  }
+}
+</script>
 <style lang="scss">
 @import './assets/base.css';
 
@@ -25,7 +51,7 @@ body {
   padding: 0;
   height: 100%;
   position: relative;
-  background-color: #c4d600;
+  background-color: #EFF7FF;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -52,6 +78,23 @@ body {
   vertical-align: center;
   align-items: center;
 }
+.redirect{
+  grid-template-columns: 1fr;
+  grid-template-areas: ". .";
+  background-color: white;
+  border-radius: 15px;
+  width:60%;
+  margin: auto auto;
+  h1{
+    color:#071D49;
+    font-size: 1.6rem;
+    line-height: 1.4rem;
+  }
+  .card{
+    background: white;
+  }
+
+}
 .content-img{
   height: 80%;
 }
@@ -67,9 +110,9 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
   position: relative;
-  display: block;
+  display: grid;
   place-items: center;
   font-family: 'Montserrat', sans-serif;
 }
@@ -91,8 +134,14 @@ a,
 }
 h1{
   font-weight: bolder;
-  line-height: 3.1rem;
-  font-size: 3.5rem;
+  line-height: 2.5rem;
+  font-size: 2.3rem;
+  color: #071D49;
+}
+h2{
+  font-weight: 600;
+  line-height: 1.2rem;
+  font-size: 1.4rem;
   color: white;
 }
 .btn{
@@ -108,6 +157,7 @@ h1{
   border: 0px solid transparent;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
+  font-width: 500;
   line-height: 1.5;
   border-radius: 0 0.25rem 0.25rem 0;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -117,7 +167,11 @@ h1{
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 }
-
+@media(max-width: 768px){
+  .redirect{
+    width: 100%;
+  }
+}
 @media (max-width: 1024px) {
   #app {
     /*display: flex;*/
