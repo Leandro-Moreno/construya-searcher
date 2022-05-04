@@ -1,7 +1,8 @@
 <template>
   <div class="card">
     <div class="card--header">
-      <h1>Para continuar con la solicitud de crédito redireccionamos a</h1>
+      <h1>¡Muy Bien!</h1>
+      <h2>Estas siendo redirigido a</h2>
       <img class="content-img entreamigos" src="../entre-amigos.png" />
     </div>
     <div class="card--content">

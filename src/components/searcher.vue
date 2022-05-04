@@ -1,10 +1,19 @@
 <template>
   <div>
-  <img src="https://www.construya.com/images/inicio/logo_horizontal.png" alt="logo" class="logo" />
-  <div class="card">
+    <div class="head-text">
+      <h1>!Bienvenido!</h1>
+      <img class="content-img entreamigos" src="../entre-amigos.png"/>
+      <h2>una solución 100% digital</h2>
+      <p>ha realizado una alianza con Construyá para que obtengas el dinero que necesitas y construyas con tus
+        sueños</p>
+      <span>Aprobación sin papeleo y desembolso en 24 horas hábiles</span>
+      <img alt="logo" class="logo" src="https://www.construya.com/images/inicio/logo_horizontal.png"/>
+    </div>
+
+    <div class="card">
     <div class="card--header">
-      <h1>Para realizar tu solicitud de crédito</h1>
-      <h2>Ingresa el nombre de la ferretería en la que vas a realizar tu compra.</h2>
+      <h2>Para realizar tu solicitud de crédito</h2>
+      <h3>Ingresa el nombre de la ferretería en la que vas a realizar tu compra.</h3>
     </div>
     <div class="card--content">
       <div class="input-group">
@@ -21,12 +30,13 @@
                v-on:input="search"
                ref="searchQuery"
         >
-        <div class="input-group-append">
+        <div class="input-group-append"
+             v-if="mobile"
+        >
           <button
               class="btn btn-squared btn-secondary"
                   type="button"
           @click="search"
-              v-if="isMobile"
           >
             <i class="bx bx-search"></i>
           </button>
@@ -64,7 +74,7 @@ export default {
         ciudad: ''
       },
       resultsActive: false,
-      isMobile: false,
+      mobile: false,
     }
   },
   emits: ['idSelected'],
@@ -100,9 +110,9 @@ export default {
       this.selected.name = name;
       this.selected.ciudad = ciudad;
     },
-    isMobile() {
+    checkMobile() {
       if(window.innerWidth < 768){
-        this.isMobile = true;
+        this.mobile = true;
       }
     },
     search() {
@@ -128,12 +138,15 @@ export default {
   },
   mounted() {
     this.importData();
-    this.isMobile();
+    this.checkMobile();
   }
 }
 
 </script>
 <style lang="scss">
+.head-text{
+  text-align: center;
+}
 .selected{
   position: absolute;
   top: 5px;
@@ -259,11 +272,12 @@ export default {
   &--header {
      padding: 20px;
      display: grid;
+     text-align: center;
   }
 
   &--content {
     border-radius: 0 0 2px 2px;
-    padding: 20px;
+    padding: 0 0 20px 0;
   }
 }
 </style>
