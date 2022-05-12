@@ -1,19 +1,9 @@
 <template>
   <div>
-    <div class="head-text">
-      <h1>!Bienvenido!</h1>
-      <img class="content-img entreamigos" src="../entre-amigos.png"/>
-      <h2>una solución 100% digital</h2>
-      <p>ha realizado una alianza con Construyá para que obtengas el dinero que necesitas y construyas con tus
-        sueños</p>
-      <span>Aprobación sin papeleo y desembolso en 24 horas hábiles</span>
-      <img alt="logo" class="logo" src="https://www.construya.com/images/inicio/logo_horizontal.png"/>
-    </div>
-
     <div class="card">
     <div class="card--header">
-      <h2>Para realizar tu solicitud de crédito</h2>
-      <h3>Ingresa el nombre de la ferretería en la que vas a realizar tu compra.</h3>
+      <h1>Realiza tu solicitud de crédito</h1>
+      <p>Ingresa el nombre de la ferretería en la que vas a realizar tu compra</p>
     </div>
     <div class="card--content">
       <div class="input-group">
@@ -52,6 +42,13 @@
       </div>
       {{selected.ciudad}}
     </div>
+      <p>
+        <b>Entre Amigos, una solución 100% digital</b>, ha realizado una alianza con <b>Construyá</b> para que obtengas el dinero que necesitas y hagas crecer tu negocio.
+        <ul>
+                <li>Aprobación <b>sin papeleo.</b></li>
+                <li>Desembolso en <b>24 horas</b> hábiles.</li>
+    </ul>
+      </p>
     <div class="btn btn-primary" @click="sendToPage">
       Continuar solicitud
     </div>
@@ -266,13 +263,14 @@ export default {
   position: relative;
   margin: 10px 0 20px 0;
   border-radius: 8px;
-  background: #c4d600;
+  /*background: #c4d600;*/
   /*background-color: white;*/
-  padding: 25px;
+  /*background-color: white;*/
+  padding: 0;
   &--header {
-     padding: 20px;
+     padding: 20px 0px;
      display: grid;
-     text-align: center;
+     text-align: left;
   }
 
   &--content {

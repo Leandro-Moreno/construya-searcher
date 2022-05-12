@@ -63,6 +63,7 @@ body {
 
 .main-body {
   max-width: 75vw;
+  min-width: 65vw;
   margin: 10px auto;
   /*!* padding-top: 10%;*/
 }
@@ -70,7 +71,7 @@ body {
   padding: 20px;
   padding-bottom: 0px;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 60% 40%;
   grid-template-areas: ". .";
   justify-content: space-evenly;
   justify-items: stretch;
@@ -86,12 +87,12 @@ body {
   width:60%;
   margin: auto auto;
   h1{
-    color:#071D49;
+    color:#00356D;
+    font-weight: 700;
     font-size: 1.6rem;
     line-height: 1.4rem;
   }
   .card{
-    background: white;
   }
 
 }
@@ -99,7 +100,9 @@ body {
   padding-top: 10%;
   height: 80%;
 }
-
+b{
+  font-weight: bolder;
+}
 
 #app {
   /*max-width: 1280px;*/
@@ -134,10 +137,10 @@ a,
   transition: 0.4s;
 }
 h1{
-  font-weight: bolder;
+  font-weight: 700;
   line-height: 2.5rem;
   font-size: 2.3rem;
-  color: #071D49;
+  color: #00356D;
 }
 h2{
   font-weight: 700;
