@@ -30,6 +30,10 @@
           >
             <i class="bx bx-search"></i>
           </button>
+
+        </div>
+        <div class="btn btn-primary" @click="sendToPage">
+          Solicitar
         </div>
         <div class="search-results" v-if="resultsActive">
           <div v-for="(result, index) in searchActive.slice(0, 6)" ref="result.id" class="result" @click="select(result.id, result.name, result.ciudad)">
@@ -43,15 +47,12 @@
       {{selected.ciudad}}
     </div>
       <p>
-        <b>Entre Amigos, una solución 100% digital</b>, ha realizado una alianza con <b>Construyá</b> para que obtengas el dinero que necesitas y hagas crecer tu negocio.
+        <b>Entre Amigos, una solución digital</b> que te permite financiar la compra de materiales para mejorar tu vivienda o negocio con <b>Construyá</b>
         <ul>
                 <li>Aprobación <b>sin papeleo.</b></li>
                 <li>Desembolso en <b>24 horas</b> hábiles.</li>
     </ul>
       </p>
-    <div class="btn btn-primary" @click="sendToPage">
-      Continuar solicitud
-    </div>
   </div>
   </div>
 </template>
@@ -202,6 +203,7 @@ export default {
   -ms-flex-align: stretch;
   align-items: stretch;
   width: 100%;
+  column-gap:5px;
 
   &-append {
     display: flex;
@@ -234,7 +236,6 @@ export default {
     background-color: #00356d;
     color: #cfe103;
     font-weight: 700;
-    WIDTH: 100%;
   }
 }
 .form-control {
@@ -268,9 +269,7 @@ export default {
   /*background-color: white;*/
   padding: 0;
   &--header {
-     padding: 20px 0px;
-     display: grid;
-     text-align: left;
+     padding
   }
 
   &--content {

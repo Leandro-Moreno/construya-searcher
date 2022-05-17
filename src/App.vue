@@ -1,7 +1,7 @@
 <template>
-<!--  <NavBar v-if="!inRedirection">-->
+  <NavBar v-if="!inRedirection">
 
-<!--  </NavBar>-->
+  </NavBar>
   <div class="main-body">
 
     <main class="body-inner" v-if="!inRedirection">
@@ -117,7 +117,7 @@ b{
   height: 100vh;
   position: relative;
   display: grid;
-  place-items: center;
+  /*place-items: center;*/
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -127,7 +127,7 @@ header {
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  /*margin: 0 auto 2rem;*/
 }
 
 a,
@@ -149,7 +149,7 @@ h2{
   color: #071D49;
 }
 p{
-  color: #071D49;
+  color: #515E75;
   font-weight: normal;
 }
 span{
@@ -169,10 +169,9 @@ span{
   user-select: none;
   border: 0px solid transparent;
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-width: 500;
-  line-height: 1.5;
-  border-radius: 0 0.25rem 0.25rem 0;
+  font-weight: 600;
+  line-height: 2.2;
+  border-radius: 8px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (hover: hover) {
