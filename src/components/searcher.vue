@@ -269,7 +269,11 @@ export default {
   /*background-color: white;*/
   padding: 0;
   &--header {
-     padding
+     padding: 20px 0px;
+     display: grid;
+     text-align: left;
+     justify-items: center;
+   }
   }
 
   &--content {
