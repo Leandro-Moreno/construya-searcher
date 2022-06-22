@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <img src="https://www.construya.com/images/inicio/logo_horizontal.png" alt="logo" class="logo" />
+    <img src="../logo.svg" alt="logo" class="logo" />
   </header>
 </template>
 <script>
@@ -33,15 +33,15 @@ export default {
   justify-items: center;
   align-content: center;
 }
+.logo{
+  width: 70%;
+}
 @media(max-width: 768px){
   .header{
     border-radius: 0px 0px 16px 16px;
     width: 314px;
     height: 88px;
     padding-right: 0px;
-  }
-  .logo{
-    max-width: 125px;
   }
   #app{
     place-items: center;
