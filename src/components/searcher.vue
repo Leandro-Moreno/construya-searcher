@@ -47,11 +47,7 @@
       {{selected.ciudad}}
     </div>
       <p>
-        <b>Entre Amigos, una solución digital</b> que te permite financiar la compra de materiales para mejorar tu vivienda o negocio con <b>Construyá</b>
-        <ul>
-                <li>Aprobación <b>sin papeleo.</b></li>
-                <li>Desembolso en <b>24 horas</b> hábiles.</li>
-    </ul>
+        <b>Construyá</b> y <b>Entre Amigos</b> presentan una nueva solución que te permite financiar la compra de materiales para mejora de tu vivienda o negocio, 100% digital y sin papeleos.
       </p>
   </div>
   </div>
@@ -274,11 +270,11 @@ export default {
      text-align: left;
      justify-items: center;
    }
-  }
 
   &--content {
     border-radius: 0 0 2px 2px;
     padding: 0 0 20px 0;
   }
 }
+
 </style>

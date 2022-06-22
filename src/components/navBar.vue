@@ -1,7 +1,6 @@
 <template>
   <header class="header">
     <img src="https://www.construya.com/images/inicio/logo_horizontal.png" alt="logo" class="logo" />
-    <img src="../entreamigos.svg" alt="logo" class="logo" />
   </header>
 </template>
 <script>
