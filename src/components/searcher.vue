@@ -77,7 +77,7 @@ export default {
       if (newValue.length ==0) {
         this.resultsActive = false;
       }
-      console.log("watch:"+newValue);
+      // console.log("watch:"+newValue);
     },
   },
   methods: {
@@ -109,17 +109,25 @@ export default {
         this.mobile = true;
       }
     },
+    removeAccents(str) {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    },
     search() {
       //takes query String to search in data Array that contains object with name and id
       //returns array of objects that match the query
-      console.log("search:"+this.searchQuery);
       if(this.searchQuery.length>0){
         this.resultsActive = true;
       }
       this.searchActive = this.data;
+      const searchNormalize = this.removeAccents(this.searchQuery.toLowerCase());
       //takes this.searchQuery and searches in this.data Object to return an array of objects that match the query
       this.searchActive = this.searchActive.filter(function (item) {
-        return item.name.toLowerCase().includes(this.searchQuery.toLowerCase());
+        let itemName = item.name.toLowerCase();
+        itemName = this.removeAccents(itemName);
+        let itemCiudad = item.ciudad.toLowerCase();
+        itemCiudad = this.removeAccents(itemCiudad);
+        // console.log(item);
+        return (itemName.includes(searchNormalize) || itemCiudad.includes(searchNormalize));
       }.bind(this));
 
 
@@ -185,6 +193,7 @@ export default {
   padding: 3px 5px;
   background-color: white;
   cursor: pointer;
+  color: #2c3e50;
   &:hover{
     background-color: #2c3e50;
     color: white;
