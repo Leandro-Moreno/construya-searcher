@@ -3,7 +3,7 @@
     <div class="card">
     <div class="card--header">
       <h1>Realiza tu solicitud de crédito</h1>
-      <p>Ingresa el nombre de la ferretería en la que vas a realizar tu compra</p>
+      <p>Ingresa el nombre o ciudad de la ferretería en la que vas a realizar tu compra.</p>
     </div>
     <div class="card--content">
       <div class="input-group">
@@ -46,9 +46,13 @@
       </div>
       {{selected.ciudad}}
     </div>
-      <p>
-        <b>Construyá</b> y <b>Entre Amigos</b> presentan una nueva solución que te permite financiar la compra de materiales para mejora de tu vivienda o negocio, 100% digital y sin papeleos.
-      </p>
+      <p>Para realizar tu solicitud es importante:</p>
+      <ol class="search-ol">
+        <li>Conocer la ferretería donde deseas realizar la solicitud. <a class="link-pdf" href="https://construya.com/images/ubicacion_ferreterias.pdf" target="_blank">Identifica aquí las ferreterías que tienes cerca.</a></li>
+        <li>Cédula original.</li>
+        <li>Tener celular (Smartphone)</li>
+        <li>Activar los permisos de ubicación de tu celular</li>
+      </ol>
   </div>
   </div>
 </template>
@@ -284,6 +288,13 @@ export default {
     border-radius: 0 0 2px 2px;
     padding: 0 0 20px 0;
   }
+}
+.search-ol {
+  color: #495057;
+  padding-left: 15px;
+}
+.link-pdf {
+  color: #00356d;
 }
 
 </style>
