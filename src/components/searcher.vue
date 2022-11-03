@@ -48,10 +48,10 @@
     </div>
       <p>Para realizar tu solicitud es importante:</p>
       <ol class="search-ol">
-        <li>Conocer la ferretería donde deseas realizar la solicitud. <a class="link-pdf" href="https://construya.com/images/ubicacion_ferreterias.pdf" target="_blank">Identifica aquí las ferreterías que tienes cerca.</a></li>
-        <li>Cédula original.</li>
-        <li>Tener celular (Smartphone)</li>
-        <li>Activar los permisos de ubicación de tu celular</li>
+        <li><span>Conocer la ferretería donde deseas realizar la solicitud. <a class="link-pdf" href="https://construya.com/images/ubicacion_ferreterias.pdf" target="_blank">Identifica aquí las ferreterías que tienes cerca.</a></span></li>
+        <li><span>Cédula original.</span></li>
+        <li><span>Tener celular (Smartphone)</span></li>
+        <li><span>Activar los permisos de ubicación de tu celular</span></li>
       </ol>
   </div>
   </div>
@@ -290,11 +290,22 @@ export default {
   }
 }
 .search-ol {
-  color: #495057;
+  color: #00356d;
   padding-left: 15px;
+}
+.search-ol li {
+  font-weight: bold;
+}
+.search-ol span {
+  color: #495057;
+  font-weight: normal;
+  font-size: 16px;
+  font-style: normal;
 }
 .link-pdf {
   color: #00356d;
+  font-weight: bold;
+  font-style: italic;
 }
 
 </style>
